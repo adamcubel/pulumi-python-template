@@ -25,7 +25,8 @@ def main(args : dict):
         login_config = LoginConfig(yaml_vars)
         pulumi_config = PulumiConfig(
                             login_config=login_config, 
-                            yaml_vars=yaml_vars)
+                            yaml_vars=yaml_vars,
+                            repo_root=REPO_DIRECTORY)
         
         # If not already logged into Azure CLI, login
         if not login_config.is_logged_in():

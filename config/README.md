@@ -22,7 +22,9 @@ configuration file.
 - stack_name
   - (required) The name of the stack to deploy. Anything you want 
 - project_location
-  - (required) The full filepath to the directory of the pulumi project.
+  - (required) The path to the directory of the pulumi project.
+  - If this is not a full path, the `repo_root` must be passed to the 
+  `PulumiConfig` class at creation time
 - storage_account
   - (required) The configuration object that specifies information about the 
   storage account used with pulumi
