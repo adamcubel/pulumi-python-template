@@ -1,17 +1,19 @@
 ---
+random_value: "6582749"
 environment: "sandbox"
 stack_name: "sandbox"
+project_name: "pulumi"
 login_mode: "interactive"
 project_location: "pulumi" # Change this to be the location where this code exists on the deployment machine
 storage_account: 
   name: "sandboxstg"
   sku: "Standard_LRS"
   storage_container:
-    name: "stgcontainer"
+    name: "sandboxcontainer"
   sas_token:
     name: "pulumisas"
 key_vault:
-  name: "sandboxkv432"
-  encryption_key: "pulumikey"
+  name: "sandboxkv"
+  encryption_key: "sandboxpulumikey"
 pulumi:
   configuration_variable_example: value

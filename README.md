@@ -102,6 +102,9 @@ structure of the overall YAML configuration file.
 - environment
   - (required) The name of the environment (one of sandbox, zonec, zoneb, 
   zonea, or prod)
+- project_name
+  - (required) The name of the project to deploy. Must match the name in 
+  `Pulumi.yml`
 - stack_name
   - (required) The name of the stack to deploy. Anything you want 
 - project_location
