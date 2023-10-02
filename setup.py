@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import os
 import subprocess
 import sys
 import yaml
@@ -7,6 +8,8 @@ import yaml
 from pulumi_automation_utils import common
 from pulumi_automation_utils.login_config import LoginConfig
 from pulumi_automation_utils.pulumi_config import PulumiConfig
+
+REPO_DIRECTORY = os.path.abspath(os.getcwd())
 
 def main(args : dict):
     if "yaml_file" in args.keys():
@@ -40,6 +43,6 @@ def main(args : dict):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-y", "--yaml_file", required=True, help = "Location of the YAML file for initialization")
+    parser.add_argument("-y", "--yaml_file", required=True, help = "Location of the YAML file for deployment")
     args = parser.parse_args()
     main(vars(args))
