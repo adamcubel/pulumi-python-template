@@ -1,0 +1,4 @@
+name: pulumi
+runtime:
+  name: python
+description: A description of your Python Pulumi program

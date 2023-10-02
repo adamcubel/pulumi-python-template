@@ -1,0 +1,17 @@
+---
+environment: "sandbox"
+stack_name: "sandbox"
+login_mode: "interactive"
+project_location: "/workspaces/pulumi-python-template/pulumi" # Change this to be the location where this code exists on the deployment machine
+storage_account: 
+  name: "sandboxstg"
+  sku: "Standard_LRS"
+  storage_container:
+    name: "stgcontainer"
+  sas_token:
+    name: "pulumisas"
+key_vault:
+  name: "sandboxkv432"
+  encryption_key: "pulumikey"
+pulumi:
+  configuration_variable_example: value
