@@ -102,20 +102,26 @@ structure of the overall YAML configuration file.
 - environment
   - (required) The name of the environment (one of sandbox, zonec, zoneb, 
   zonea, or prod)
+- subscription
+  - (optional) The ID of the subscription to use when deploying resources
 - project_name
   - (required) The name of the project to deploy. Must match the name in 
-  `Pulumi.yml`
+  `Pulumi.yaml`
 - stack_name
   - (required) The name of the stack to deploy. Anything you want 
 - project_location
-  - (required) The path to the directory of the pulumi project.
-  - If this is not a full path, the `repo_root` must be passed to the 
-  `PulumiConfig` class at creation time
+  - (required) The relative path to the directory of the pulumi project from 
+  the repository root.
+  - If this path is not within the repository, the `repo_root` must be passed
+   to the `PulumiConfig` class at creation time
 - storage_account
   - (required) The configuration object that specifies information about the 
   storage account used with pulumi
+  - name
+    - (required) The name of the storage account within the subscription. If 
+    this does not match an existing storage account, one will be created.
   - resource_group
-    - (optional) The name of the resource group that the Azure Key Vault 
+    - (optional) The name of the resource group that the Azure Storage Account  
     resides in
   - storage_container
     - (required) The configuration block of the Storage Account Blob Container 
@@ -131,6 +137,10 @@ structure of the overall YAML configuration file.
 - key_vault
   - (required) The configuration object that specifies information about the 
   Azure Key Vault used with pulumi
+  - name
+    - (required) The name of the Azure Key Vault to use for deployment. This 
+    is also used to create/manage an encrpytion key that is used for managing 
+    secrets in Pulumi
   - resource_group
     - (optional) The name of the resource group that the Azure Key Vault 
     resides in
