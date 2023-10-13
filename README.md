@@ -59,7 +59,7 @@ need to ensure you have Python 3.9 or later installed as well as pip3. Once
 this is done, make sure you have python's virtual environment module installed.
 
 ```
-$ pip3 install --upgrate virtualenv
+$ pip3 install --upgrade virtualenv
 ```
 
 Once this is complete, you can create a new python virtual environment by 
